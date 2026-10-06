@@ -5,7 +5,7 @@ Hello! This is my **Python** program that transforms any regular image into cool
 
 I wanted to create a tool that allows you to look at familiar images and photos in a new way, converting them into a text format while preserving details or color.
 
-> ⚠️ **Important Note:** Currently, this program only works and has been tested on **Windows 10**. Support for other operating systems (Linux/macOS) is not yet available.
+> ⚠️ **Important Note:** Currently, this program only works and has been tested on **Windows 11**. Support for other operating systems (Linux/macOS) is not yet available.
 
 ### 🌟 Features:
 * **Classic ASCII Art** — converts images into characters of varying density (text-based graphics).
