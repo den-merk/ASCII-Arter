@@ -1,15 +1,15 @@
-ЛИЦЕНЗИОННОЕ СОГЛАШЕНИЕ (EULA)
+END-USER LICENSE AGREEMENT (EULA)
 
-Настоящее Лицензионное соглашение является юридическим документом, заключаемым между автором (владельцем авторских прав) и любым физическим или юридическим лицом (Пользователем), осуществляющим доступ к данному репозиторию.
+This End-User License Agreement (the "Agreement") is a legally binding contract entered into by and between the Author (the Copyright Owner) and any individual or legal entity (the "User") accessing this repository.
 
-1. ПРЕДОСТАВЛЕНИЕ ЛИЦЕНЗИИ
-Автор предоставляет Пользователю безвозмездную, неисключительную лицензию на загрузку, компиляцию и запуск данного программного обеспечения исключительно в личных, ознакомительных и некоммерческих целях.
+1. GRANT OF LICENSE
+The Author hereby grants the User a royalty-free, non-exclusive license to download, compile, and run this software solely for personal, educational, and non-commercial purposes.
 
-2. ОГРАНИЧЕНИЯ
-Пользователю строго запрещается:
-- Использовать программное обеспечение, его части или производные компоненты в коммерческих целях (для получения прибыли, в бизнес-процессах или платных сервисах).
-- Копировать, модифицировать, изменять, переводить или создавать производные произведения на основе данного кода (за исключением создания форков внутри платформы GitHub, разрешенных Условиями обслуживания GitHub).
-- Распространять измененные версии кода от своего имени.
+2. RESTRICTIONS
+The User is strictly prohibited from engaging in any of the following activities:
+• Using the software, any parts thereof, or derivative components for commercial purposes (including, but not limited to, generating profit, integrating into business processes, or utilizing within paid services).
+• Copying, modifying, altering, translating, or creating derivative works based on this code (except for creating forks within the GitHub platform as permitted by the GitHub Terms of Service).
+• Distributing modified versions of the code under the User’s own name.
 
-3. АВТОРСКОЕ ПРАВО
-Все права на исходный код принадлежат Автору: Данил Меркушев (den-merk), 2026 год. Защищено авторским правом.
+3. COPYRIGHT
+All rights, title, and interest in and to the source code are reserved by and belong exclusively to the Author: Danil Merkushev (den-merk), 2026. All rights reserved.
