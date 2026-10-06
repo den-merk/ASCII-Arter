@@ -35,3 +35,7 @@ Here is what you will find inside the project folder:
 * **`example.jpg`** — A sample image you can use to test the generator right away.
 * **`example.txt`** — An example of the exported text-based ASCII art generated from the sample image.
 * Other project files whose purposes are self-explanatory by their names.
+
+## ⚖️ End-User License Agreement (EULA)
+
+Before using this application, please make sure you read and understand the LICENSE.
