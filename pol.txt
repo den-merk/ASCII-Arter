@@ -1,0 +1,13 @@
+ .`^*-~+=:;>rilkdb#MW8&%$@
+
+^^^^^^^^^^
+An example is currently shown there.
+
+Enter the so-called palette here (into first line) - 
+that is a gradient of characters,
+where the first character corresponds to 
+the fewest filled pixels and the last to the most.
+
+It is also recommended to place a space at the very beginning, 
+since it contains no filled pixels at all.
+
