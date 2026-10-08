@@ -7,35 +7,34 @@ import math
 
 from time import sleep
 
-import os
-
-import tkinter as tk
 from tkinter import filedialog as fd 
 
-
-
-import sys
+import os
 def draw(f_of_c=1.25):
-    factor_of_contrast = f_of_c #(standart is 1.25)
-    is_full_width = True
-    # Включает поддержку ANSI-последовательностей в Windows принудительно
-    if sys.platform == "win32":
-        os.system('') 
+    
+    factor_of_contrast = f_of_c #(standart is 1)
+
+
 
     def get_average_color(img, x, y, w, h):
         rr=0
         rg=0
         rb=0
 
-        for i in range(h):
-            for j in range(w):
-                rr+=pix[x+j, y+i][0]
-                rg+=pix[x+j, y+i][1]
-                rb+=pix[x+j, y+i][2]
+        for i in range(max(h,1)):
+            for j in range(max(w,1)):
+                try:
+                    rr+=pix[x+j, y+i][0]
+                    rg+=pix[x+j, y+i][1]
+                    rb+=pix[x+j, y+i][2]
+                except:
+                    rr+=128
+                    rg+=128
+                    rb+=128
         
-        rrggbb = ((rr//(w*h)) + (rg//(w*h)) + (rb//(w*h)))/3
 
-        return (rrggbb)
+
+        return (int(min(255,rr//max(w*h,1))) + int(min(255,rg//max(w*h,1))) + int(min(255,rb//max(w*h,1))))//3
 
 
 
@@ -51,26 +50,26 @@ def draw(f_of_c=1.25):
     image_height = image.size[1]  # Определяем высоту
     pix = image.load()  # Выгружаем значения пикселей
 
-    console_width = min(os.get_terminal_size().columns, image_width)
-    console_height = min(os.get_terminal_size().lines, image_height)
+    console_width = os.get_terminal_size().columns
+    console_height = os.get_terminal_size().lines
 
-    if is_full_width:
-        k = image_width/console_width
-    else:
-        k = max([image_width/console_width, image_height/console_height])
+
+    k = image_width/console_width
+
 
 
     console_image_width = math.floor(image_width/k)
     console_image_height = math.floor(image_height/k)
 
-    console = Console(color_system="truecolor", force_terminal=True)
-    a = Text()
+
+    a = ""
 
     n_y = 0
     with open("pol.txt", "r", encoding="utf-8") as file:
         pol = file.readline().strip('\n')
     if pol == "":
         pol = ' .`^*-~+=:;>rilkdb#MW8&%$@'
+    k_p = 256 / len(pol)
     if is_rev == "y":
         pol = pol[::-1]
 
@@ -78,21 +77,18 @@ def draw(f_of_c=1.25):
         for x in range(console_image_width-1):
             rgb_color = get_average_color(image, math.floor(x*k), math.floor(y*k*2), math.floor(k), math.floor(k))
             
-            ch = pol[int(rgb_color // (256 / len(pol)))]
+            ch = pol[int(rgb_color // k_p)]
             
             
-            a.append(ch)
+            a+= ch
 
-        a.append("\n")
+        a+="\n"
         n_y = y
-    for i in range(console_height-n_y):
-        a.append("\n")
-    console.print(a,end="")
 
-    sleep(0.1)
-    # print(repr(a))
+
+    print(a)
+
     input()
 
-
 if __name__ == '__main__':
-    draw() 
+    draw()

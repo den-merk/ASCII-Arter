@@ -19,15 +19,19 @@ def draw(f_of_c=1.25):
         rg=0
         rb=0
 
-        for i in range(h):
-            for j in range(w):
-                rr+=pix[x+j, y+i][0]
-                rg+=pix[x+j, y+i][1]
-                rb+=pix[x+j, y+i][2]
-        
-        rrggbb = ((rr//(w*h)) + (rg//(w*h)) + (rb//(w*h)))/3
+        for i in range(max(h,1)):
+            for j in range(max(w,1)):
+                try:
+                    rr+=pix[x+j, y+i][0]
+                    rg+=pix[x+j, y+i][1]
+                    rb+=pix[x+j, y+i][2]
+                except:
+                    rr+=128
+                    rg+=128
+                    rb+=128
 
-        return (rrggbb)
+
+        return (int(min(255,rr//max(w*h,1))) + int(min(255,rg//max(w*h,1))) + int(min(255,rb//max(w*h,1))))//3
 
 
 

@@ -18,7 +18,7 @@ import sys
 def draw(f_of_c=1.25):
     factor_of_contrast = f_of_c #(standart is 1.25)
     is_full_width = True
-    k_w = 1.25
+    k_w = 1
     # Включает поддержку ANSI-последовательностей в Windows принудительно
     if sys.platform == "win32":
         os.system('') 
@@ -28,12 +28,17 @@ def draw(f_of_c=1.25):
         rg=0
         rb=0
 
-        for i in range(h):
-            for j in range(w):
-                rr+=pix[x+j, y+i][0]
-                rg+=pix[x+j, y+i][1]
-                rb+=pix[x+j, y+i][2]
-        return (int(min(255,rr//(w*h)*k_w)), int(min(255,rg//(w*h)*k_w)), int(min(255,rb//(w*h)*k_w)))
+        for i in range(max(h,1)):
+            for j in range(max(w,1)):
+                try:
+                    rr+=pix[x+j, y+i][0]
+                    rg+=pix[x+j, y+i][1]
+                    rb+=pix[x+j, y+i][2]
+                except:
+                    rr+=128
+                    rg+=128
+                    rb+=128
+        return (int(min(255,rr//max(w*h,1)*k_w)), int(min(255,rg//max(w*h,1)*k_w)), int(min(255,rb//max(w*h,1)*k_w)))
 
 
 
@@ -49,8 +54,8 @@ def draw(f_of_c=1.25):
     image_height = image.size[1]  # Определяем высоту
     pix = image.load()  # Выгружаем значения пикселей
 
-    console_width = min(os.get_terminal_size().columns, image_width)
-    console_height = min(os.get_terminal_size().lines, image_height)
+    console_width = os.get_terminal_size().columns
+    console_height = os.get_terminal_size().lines
 
     if is_full_width:
         k = image_width/console_width
